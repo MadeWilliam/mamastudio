@@ -15,7 +15,7 @@ import Home from "./Home.jsx";
 import AboutUs from "./AboutUs.jsx";
 import {Courses} from "./Courses.jsx";
 import CoursesDetail from "./CoursesDetail.jsx";
-import News from "./News.jsx";
+import {News} from "./News.jsx";
 import Gallery from "./Gallery.jsx";
 import Contact from "./Contact.jsx";
 import Login from "./Login.jsx";

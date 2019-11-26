@@ -79,7 +79,7 @@ export const Course = props => {
             {props.lessons}
           </Typography>
           <Typography
-            style={{ color: "pu.500.000,-", margin: "10px", textAlign: "right" }}
+            style={{ color: "grey", margin: "10px", textAlign: "right" }}
             variant="h5"
           >
             {props.price}
@@ -102,6 +102,30 @@ export class Courses extends Component {
         }}
       >
         <Container
+          style={{
+            backgroundColor: "#F1F0FF",
+            borderBottomLeftRadius: "80%",
+            width: "50%",
+            height: "50%",
+            position: "absolute",
+            top: 0,
+            right: 0,
+            zIndex: -1,
+          }}
+        ></Container>
+        <Container
+          style={{
+            backgroundColor: "#F1F0FF",
+            borderRadius: "80%",
+            width: "70%",
+            height: "80%",
+            position: "absolute",
+            top: "80%",
+            left: 0,
+            zIndex: -1,
+          }}
+        ></Container>
+        <Container
           fixed
           style={{
             margin: "20px",
@@ -123,7 +147,7 @@ export class Courses extends Component {
               margin: 40,
               borderRadius: "24px",
               display: "flex",
-              backgroundColor: "#F1F0FF",
+              backgroundColor: "whitesmoke",
               justifyContent: "space-around"
             }}
           >
@@ -214,7 +238,7 @@ export class Courses extends Component {
                 button="website"
                 buttonColor="#50C4EE"
                 price="Rp 7.500.000,-"
-                backgroundColor="#F1F0FF"
+                backgroundColor="whitesmoke"
               />
               <Course
                 img={require("../images/image2.jpg")}
@@ -224,7 +248,7 @@ export class Courses extends Component {
                 button="design"
                 buttonColor="#EE71C7"
                 price="Rp 7.500.000,-"
-                backgroundColor="#F1F0FF"
+                backgroundColor="whitesmoke"
               />
               <Course
                 img={require("../images/image3.jpg")}
@@ -234,7 +258,7 @@ export class Courses extends Component {
                 button="php"
                 buttonColor="#9177F5"
                 price="Rp 7.500.000,-"
-                backgroundColor="#F1F0FF"
+                backgroundColor="whitesmoke"
               />
               <Course
                 img={require("../images/image1.jpg")}
@@ -244,7 +268,7 @@ export class Courses extends Component {
                 button="react"
                 buttonColor="#5C4CEB"
                 price="Rp 7.500.000,-"
-                backgroundColor="#F1F0FF"
+                backgroundColor="whitesmoke"
               />
               <Course
                 img={require("../images/image2.jpg")}
@@ -254,7 +278,7 @@ export class Courses extends Component {
                 button="music"
                 buttonColor="#95D354"
                 price="Rp 7.500.000,-"
-                backgroundColor="#F1F0FF"
+                backgroundColor="whitesmoke"
               />
               <Course
                 img={require("../images/image3.jpg")}
@@ -264,7 +288,7 @@ export class Courses extends Component {
                 button="medicine"
                 buttonColor="#603DBB"
                 price="Rp 7.500.000,-"
-                backgroundColor="#F1F0FF"
+                backgroundColor="whitesmoke"
               />
               <Course
                 img={require("../images/image1.jpg")}
@@ -274,7 +298,7 @@ export class Courses extends Component {
                 button="nodejs"
                 buttonColor="red"
                 price="Rp 7.500.000,-"
-                backgroundColor="#F1F0FF"
+                backgroundColor="whitesmoke"
               />
             </Container>
           </Container>
