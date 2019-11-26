@@ -13,7 +13,8 @@ import {
 
 import Home from "./Home.jsx";
 import AboutUs from "./AboutUs.jsx";
-import Courses from "./Courses.jsx";
+import {Courses} from "./Courses.jsx";
+import CoursesDetail from "./CoursesDetail.jsx";
 import News from "./News.jsx";
 import Gallery from "./Gallery.jsx";
 import Contact from "./Contact.jsx";
@@ -96,6 +97,7 @@ export default function Album() {
           <Route path="/gallery" component={Gallery} />
           <Route path="/contact" component={Contact} />
           <Route path="/login" component={Login} />
+          <Route path="/courses-detail" component={CoursesDetail} />
         </main>
 
         {/* Footer */}

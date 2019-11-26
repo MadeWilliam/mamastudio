@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 import { Toolbar, Button, Typography, Container } from "@material-ui/core";
 import "react-owl-carousel2/lib/styles.css";
 
-const Course = props => {
+export const Course = props => {
   return (
     <Container
       style={{
@@ -12,76 +12,85 @@ const Course = props => {
         maxWidth: "364px",
         maxHeight: "750px",
         padding: 0,
-        backgroundColor: "#F1F0FF",
+        backgroundColor: (props.backgroundColor),
         margin: "20px 10px",
         borderRadius: "24px",
         textAlign: "center"
       }}
     >
-      <Container
+      <NavLink
         style={{
-          position: "relative",
-          minHeight: "300px",
-          margin: 0,
-          padding: 0
+          display: "inline-block",
+          textDecoration: "none"
         }}
+        to="/courses-detail"
+        exact
       >
-        <img
+        <Container
           style={{
-            borderTopLeftRadius: "24px",
-            borderTopRightRadius: "24px",
-            width: "100%",
-            height: "100%"
+            position: "relative",
+            minHeight: "300px",
+            margin: 0,
+            padding: 0
           }}
-          src={props.img}
-          alt="image-slidder"
-        />
-        <Button
+        >
+          <img
+            style={{
+              borderTopLeftRadius: "24px",
+              borderTopRightRadius: "24px",
+              width: "100%",
+              height: "100%"
+            }}
+            src={props.img}
+            alt="image-slidder"
+          />
+          <Button
+            style={{
+              backgroundColor: props.buttonColor,
+              fontWeight: "900",
+              borderRadius: "24px",
+              color: "white",
+              marginBottom: "10px",
+              position: "absolute",
+              top: 20,
+              left: 20
+            }}
+            href="#"
+            variant="contained"
+          >
+            {props.button}
+          </Button>
+        </Container>
+        <Container
           style={{
-            backgroundColor: props.color,
-            fontWeight: "900",
-            borderRadius: "24px",
-            color: "white",
-            marginBottom: "10px",
-            position: "absolute",
-            top: 20,
-            left: 20
+            minHeight: "150px",
+            margin: 0,
+            paddingLeft: 0,
+            paddingRight: 0
           }}
-          href="#"
-          variant="contained"
         >
-          {props.button}
-        </Button>
-      </Container>
-      <Container
-        style={{
-          minHeight: "150px",
-          margin: 0,
-          paddingLeft: 0,
-          paddingRight: 0
-        }}
-      >
-        <Typography style={{ color: "#EC9120" }} variant="h4">
-          {props.title}
-        </Typography>
-        <Typography style={{ marginTop: "10px" }} variant="h5">
-          {props.desc}
-        </Typography>
-        <Typography style={{ marginTop: "10px" }} variant="body2">
-          {props.lessons}
-        </Typography>
-        <Typography
-          style={{ color: "purple", margin: "10px", textAlign: "right" }}
-          variant="h5"
-        >
-          {props.price}
-        </Typography>
-      </Container>
+          <Typography style={{ color: "#EC9120" }} variant="h4">
+            {props.title}
+          </Typography>
+          <Typography style={{ marginTop: "10px" }} variant="h5">
+            {props.author}
+          </Typography>
+          <Typography style={{ marginTop: "10px" }} variant="body2">
+            {props.lessons}
+          </Typography>
+          <Typography
+            style={{ color: "pu.500.000,-", margin: "10px", textAlign: "right" }}
+            variant="h5"
+          >
+            {props.price}
+          </Typography>
+        </Container>
+      </NavLink>
     </Container>
   );
 };
 
-class Courses extends Component {
+export class Courses extends Component {
   render() {
     return (
       <Container
@@ -115,7 +124,7 @@ class Courses extends Component {
               borderRadius: "24px",
               display: "flex",
               backgroundColor: "#F1F0FF",
-              justifyContent: "space-around",
+              justifyContent: "space-around"
             }}
           >
             <NavLink
@@ -200,65 +209,72 @@ class Courses extends Component {
               <Course
                 img={require("../images/image1.jpg")}
                 title="Quantum Computers"
-                desc="Ivan Cornejo"
+                author="Ivan Cornejo"
                 lessons="10 Lessons"
                 button="website"
-                color="#50C4EE"
-                price="Rp 7,5JT"
+                buttonColor="#50C4EE"
+                price="Rp 7.500.000,-"
+                backgroundColor="#F1F0FF"
               />
               <Course
                 img={require("../images/image2.jpg")}
                 title="Mechanics"
-                desc="Chikanso Chima"
+                author="Chikanso Chima"
                 lessons="10 Lessons"
                 button="design"
-                color="#EE71C7"
-                price="Rp 7,5JT"
+                buttonColor="#EE71C7"
+                price="Rp 7.500.000,-"
+                backgroundColor="#F1F0FF"
               />
               <Course
                 img={require("../images/image3.jpg")}
                 title="Neuroscience"
-                desc="Leonardo Oliveira"
+                author="Leonardo Oliveira"
                 lessons="10 Lessons"
                 button="php"
-                color="#9177F5"
-                price="Rp 7,5JT"
+                buttonColor="#9177F5"
+                price="Rp 7.500.000,-"
+                backgroundColor="#F1F0FF"
               />
               <Course
                 img={require("../images/image1.jpg")}
                 title="Human Evolution"
-                desc="Joslin Rodgers"
+                author="Joslin Rodgers"
                 lessons="10 Lessons"
                 button="react"
-                color="#5C4CEB"
-                price="Rp 7,5JT"
+                buttonColor="#5C4CEB"
+                price="Rp 7.500.000,-"
+                backgroundColor="#F1F0FF"
               />
               <Course
                 img={require("../images/image2.jpg")}
                 title="Genetic Models"
-                desc="Kita Chihoko"
+                author="Kita Chihoko"
                 lessons="10 Lessons"
                 button="music"
-                color="#95D354"
-                price="Rp 7,5JT"
+                buttonColor="#95D354"
+                price="Rp 7.500.000,-"
+                backgroundColor="#F1F0FF"
               />
               <Course
                 img={require("../images/image3.jpg")}
                 title="Catalytic Conversions"
-                desc="Svyatoslav Taushev"
+                author="Svyatoslav Taushev"
                 lessons="10 Lessons"
                 button="medicine"
-                color="#603DBB"
-                price="Rp 7,5JT"
+                buttonColor="#603DBB"
+                price="Rp 7.500.000,-"
+                backgroundColor="#F1F0FF"
               />
               <Course
                 img={require("../images/image1.jpg")}
                 title="Quantum Computers"
-                desc="Ivan Cornejo"
+                author="Ivan Cornejo"
                 lessons="10 Lessons"
                 button="nodejs"
-                color="red"
-                price="Rp 7,5JT"
+                buttonColor="red"
+                price="Rp 7.500.000,-"
+                backgroundColor="#F1F0FF"
               />
             </Container>
           </Container>
@@ -268,4 +284,4 @@ class Courses extends Component {
   }
 }
 
-export default Courses;
+
