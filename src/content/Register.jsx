@@ -6,7 +6,7 @@ import "react-owl-carousel2/lib/styles.css";
 
 import Slider from "react-slick";
 
-class Gallery extends Component {
+class Register extends Component {
   render() {
     return (
       <div>
@@ -22,4 +22,4 @@ class Gallery extends Component {
   }
 }
 
-export default Gallery;
+export default Register;

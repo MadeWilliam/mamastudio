@@ -21,11 +21,21 @@ const useStyles = makeStyles(theme => ({
     }
   },
   loginButton: {
-    marginLeft: "32px",
+    marginLeft: 0,
     backgroundColor: "#EC9120",
     border: "1px solid #EC9120",
-    borderRadius: "24px",
+    borderTopRightRadius: "24px",
+    borderBottomRightRadius: "24px",
     color: "white"
+  },
+  registerButton: {
+    marginRight: 0,
+    marginLeft: "12px",
+    backgroundColor: "whitesmoke",
+    border: "1px solid whitesmoke",
+    borderTopLeftRadius: "24px",
+    borderBottomLeftRadius: "24px",
+    color: "black"
   },
   footer: {
     marginTop: "40px",

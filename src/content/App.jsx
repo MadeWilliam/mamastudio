@@ -13,12 +13,12 @@ import {
 
 import Home from "./Home.jsx";
 import AboutUs from "./AboutUs.jsx";
-import {Courses} from "./Courses.jsx";
+import { Courses } from "./Courses.jsx";
 import CoursesDetail from "./CoursesDetail.jsx";
-import {News} from "./News.jsx";
+import { News } from "./News.jsx";
 import NewsDetail from "./NewsDetail.jsx";
-import Gallery from "./Gallery.jsx";
 import Contact from "./Contact.jsx";
+import Register from "./Register.jsx";
 import Login from "./Login.jsx";
 
 import useStyles from "../styles/Style";
@@ -74,13 +74,15 @@ export default function Album() {
               <NavLink to="/news" className={classes.link}>
                 News
               </NavLink>
-              <NavLink to="/gallery" className={classes.link}>
-                Gallery
-              </NavLink>
               <NavLink to="/contact" className={classes.link}>
                 Contact
               </NavLink>
             </nav>
+            <NavLink to="/register" className={classes.link}>
+              <Button className={classes.registerButton} variant="contained">
+                Register
+              </Button>
+            </NavLink>
             <NavLink to="/login">
               <Button className={classes.loginButton} variant="contained">
                 Login
@@ -95,8 +97,8 @@ export default function Album() {
           <Route path="/about-us" component={AboutUs} />
           <Route path="/courses" component={Courses} />
           <Route path="/news" component={News} />
-          <Route path="/gallery" component={Gallery} />
           <Route path="/contact" component={Contact} />
+          <Route path="/register" component={Register} />
           <Route path="/login" component={Login} />
           <Route path="/courses-detail" component={CoursesDetail} />
           <Route path="/news-detail" component={NewsDetail} />
