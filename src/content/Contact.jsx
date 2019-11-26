@@ -6,7 +6,7 @@ import "react-owl-carousel2/lib/styles.css";
 
 import Slider from "react-slick";
 
-class Blog extends Component {
+class Contact extends Component {
   render() {
     return (
       <div>
@@ -22,4 +22,4 @@ class Blog extends Component {
   }
 }
 
-export default Blog;
+export default Contact;

@@ -12,7 +12,12 @@ import {
 } from "@material-ui/core";
 
 import Home from "./Home.jsx";
-import Blog from "./Blog.jsx";
+import AboutUs from "./AboutUs.jsx";
+import Courses from "./Courses.jsx";
+import News from "./News.jsx";
+import Gallery from "./Gallery.jsx";
+import Contact from "./Contact.jsx";
+import Login from "./Login.jsx";
 
 import useStyles from "../styles/Style";
 
@@ -58,8 +63,14 @@ export default function Album() {
               <NavLink to="/" exact className={classes.link}>
                 Home
               </NavLink>
-              <NavLink to="/blog" className={classes.link}>
+              <NavLink to="/about-us" className={classes.link}>
                 About Us
+              </NavLink>
+              <NavLink to="/courses" className={classes.link}>
+                Courses
+              </NavLink>
+              <NavLink to="/news" className={classes.link}>
+                News
               </NavLink>
               <NavLink to="/gallery" className={classes.link}>
                 Gallery
@@ -68,20 +79,23 @@ export default function Album() {
                 Contact
               </NavLink>
             </nav>
-            <Button
-              className={classes.loginButton}
-              href="#"
-              variant="contained"
-            >
-              Login
-            </Button>
+            <NavLink to="/login">
+              <Button className={classes.loginButton} variant="contained">
+                Login
+              </Button>
+            </NavLink>
           </Toolbar>
         </AppBar>
 
         <main style={{ margin: 0, padding: 0 }}>
           {/* Hero unit */}
           <Route exact path="/" component={Home} />
-          <Route path="/blog" component={Blog} />
+          <Route path="/about-us" component={AboutUs} />
+          <Route path="/courses" component={Courses} />
+          <Route path="/news" component={News} />
+          <Route path="/gallery" component={Gallery} />
+          <Route path="/contact" component={Contact} />
+          <Route path="/login" component={Login} />
         </main>
 
         {/* Footer */}
