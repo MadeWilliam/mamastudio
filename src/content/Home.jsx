@@ -62,7 +62,7 @@ class Home extends Component {
     };
 
     return (
-      <React.Fragment style={{ margin: 0, padding: 0 }}>
+      <React.Fragment style={{ margin: 0, padding: 0, marginTop: "64px" }}>
         <OwlCarousel options={options}>{this.state.items}</OwlCarousel>
 
         {/* Homebanner start */}

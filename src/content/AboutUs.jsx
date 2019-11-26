@@ -8,7 +8,7 @@ class AboutUs extends Component {
     return (
       <Container
         style={{
-          marginTop: 80,
+          marginTop: 100,
           height: "600px"
         }}
       >
