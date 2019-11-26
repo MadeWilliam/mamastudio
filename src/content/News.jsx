@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 
-import { Toolbar, Button, Typography, Container } from "@material-ui/core";
+import { Button, Typography, Container } from "@material-ui/core";
 import "react-owl-carousel2/lib/styles.css";
 
 export const NewsProps = props => {

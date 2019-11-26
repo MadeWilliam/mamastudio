@@ -16,6 +16,7 @@ import AboutUs from "./AboutUs.jsx";
 import {Courses} from "./Courses.jsx";
 import CoursesDetail from "./CoursesDetail.jsx";
 import {News} from "./News.jsx";
+import NewsDetail from "./NewsDetail.jsx";
 import Gallery from "./Gallery.jsx";
 import Contact from "./Contact.jsx";
 import Login from "./Login.jsx";
@@ -98,6 +99,7 @@ export default function Album() {
           <Route path="/contact" component={Contact} />
           <Route path="/login" component={Login} />
           <Route path="/courses-detail" component={CoursesDetail} />
+          <Route path="/news-detail" component={NewsDetail} />
         </main>
 
         {/* Footer */}

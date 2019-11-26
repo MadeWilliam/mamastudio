@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-import { NavLink } from "react-router-dom";
 
 import { Course } from "./Courses";
-import { Toolbar, Button, Typography, Container } from "@material-ui/core";
+import { Typography, Container } from "@material-ui/core";
 import "react-owl-carousel2/lib/styles.css";
 
 const CourseDetail = props => {
@@ -15,7 +14,8 @@ const CourseDetail = props => {
         backgroundColor: "#F1F0FF",
         height: "100%",
         padding: 0,
-        marginTop: 40
+        marginTop: 40,
+        paddingTop: 20
       }}
     >
       <Container
