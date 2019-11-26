@@ -54,12 +54,14 @@ export default function Album() {
         >
           <Toolbar className={classes.toolbar}>
             <Typography
-              variant="h3"
+              variant="h2"
               component="h1"
               noWrap
               className={classes.toolbarTitle}
             >
-              mamastudio
+              <NavLink to="/" className={classes.toolbarTitle}>
+                <b>mamastudio</b>
+              </NavLink>
             </Typography>
             <nav>
               <NavLink to="/" exact className={classes.link}>
