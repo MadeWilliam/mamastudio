@@ -116,7 +116,7 @@ export class Courses extends Component {
             variant="h1"
             style={{ textAlign: "center", color: "#EC9120" }}
           >
-            Pilihan Paket Kursus
+            Pilihan Paket Materi
           </Typography>
           <Toolbar
             style={{
