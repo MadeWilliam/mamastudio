@@ -114,7 +114,7 @@ class CoursesDetail extends Component {
             variant="h1"
             style={{ textAlign: "center", color: "#EC9120" }}
           >
-            Detail Paket Kursus
+            Detail Paket Materi
           </Typography>
           <Container
             fixed
