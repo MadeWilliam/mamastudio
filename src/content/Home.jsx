@@ -134,22 +134,22 @@ class Home extends Component {
 
     return (
       <React.Fragment style={{ margin: 0, padding: 0, marginTop: "64px" }}>
-        <OwlCarousel options={options}>
+        {/* <OwlCarousel options={options}>
           {this.state.json.map(carousel => (
             <div key={carousel.id}>
               <img src={carousel.url} alt="banner" />
             </div>
           ))}
-        </OwlCarousel>
+        </OwlCarousel> */}
         <OwlCarousel options={options}>{items}</OwlCarousel>
-        <Container style={{width: "80%", textAlign: "center", margin: "0 auto"}}>
+        {/* <Container style={{width: "80%", textAlign: "center", margin: "0 auto"}}>
           {this.state.json.map(user => (
             <div>
               <h1>{user.name}</h1>
             </div>
           ))}
         </Container>
-
+ */}
         {/* Homebanner start */}
         <div
           style={{

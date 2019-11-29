@@ -111,7 +111,7 @@ export default function Album() {
           <Container className={classes.footerContainer}>
             <Typography
               variant="h3"
-              component="h1"
+             ppus component="h1"
               noWrap
               className={classes.footerTitle}
             >
