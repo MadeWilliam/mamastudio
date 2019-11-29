@@ -12,14 +12,8 @@ class Home extends Component {
     super(props);
 
     this.state = {
-      items: [
-        <div key={1}>
-          <img src={require("../images/slide1.jpg")} alt="banner" />
-        </div>,
-        <div key={2}>
-          <img src={require("../images/slide2.jpg")} alt="banner" />
-        </div>
-      ],
+      json: [],
+
       itemNo: 1,
       loop: false,
       nav: false,
@@ -27,6 +21,37 @@ class Home extends Component {
       autoplay: true
     };
   }
+
+  componentDidMount() {
+    fetch("https://jsonplaceholder.typicode.com/users")
+      .then(res => res.json())
+      .then(
+        result => {
+          this.setState({
+            json: result
+          });
+        },
+        error => {
+          console.log(error);
+        }
+      );
+  }
+
+  // TODO: CAROUSEL API
+  // componentDidMount() {
+  //   fetch("https://jsonplaceholder.typicode.com/users")
+  //     .then(res => res.json())
+  //     .then(
+  //       result => {
+  //         this.setState({
+  //           json: result
+  //         });
+  //       },
+  //       error => {
+  //         console.log(error);
+  //       }
+  //     );
+  // }
 
   render() {
     const options = {
@@ -61,9 +86,69 @@ class Home extends Component {
       slidesToScroll: 1
     };
 
+    // this.state.json.map(user => {
+    //   this.setState{{
+    //     userid :
+    //   }}
+    // })
+
+    // const displayJson = (
+    //   {this.state.json.map(user => {
+    //     <div>
+    //       <h1>Hellow</h1>
+    //       <h1>Hellow</h1>
+    //       <h1>Hellow</h1>
+    //     </div>
+    //   })}
+    // );
+
+    // const displayJson = (
+    //   <div>
+    //     <h1>Hellow</h1>
+    //     <h1>Hellow</h1>
+    //     <h1>Hellow</h1>
+    //   </div>
+    // );
+
+    // const items = () => {
+    //   {
+    //     this.state.json.map(carousel => [
+    //       <div key={1}>
+    //         <img src={require(`../images/${carousel}.jpg`)} alt="banner" />
+    //       </div>,
+    //       <div key={2}>
+    //         <img src={require(`../images/${carousel}".jpg`)} alt="banner" />
+    //       </div>
+    //     ]);
+    //   }
+    // };
+
+    const items = [
+      <div key={1}>
+        <img src={require(`../images/slide1.jpg`)} alt="banner" />
+      </div>,
+      <div key={2}>
+        <img src={require(`../images/slide2.jpg`)} alt="banner" />
+      </div>
+    ];
+
     return (
       <React.Fragment style={{ margin: 0, padding: 0, marginTop: "64px" }}>
-        <OwlCarousel options={options}>{this.state.items}</OwlCarousel>
+        <OwlCarousel options={options}>
+          {this.state.json.map(carousel => (
+            <div key={carousel.id}>
+              <img src={carousel.url} alt="banner" />
+            </div>
+          ))}
+        </OwlCarousel>
+        <OwlCarousel options={options}>{items}</OwlCarousel>
+        <Container style={{width: "80%", textAlign: "center", margin: "0 auto"}}>
+          {this.state.json.map(user => (
+            <div>
+              <h1>{user.name}</h1>
+            </div>
+          ))}
+        </Container>
 
         {/* Homebanner start */}
         <div
@@ -126,7 +211,7 @@ class Home extends Component {
             variant="h3"
             style={{ marginTop: 40, marginBottom: 20 }}
           >
-            Mamastudio pernah diliput
+            Studio Koding pernah diliput
           </Typography>
 
           <Slider {...liputanSettings}>
@@ -298,35 +383,131 @@ class Home extends Component {
                 height: "450px"
               }}
             >
-              <Container style={{marginLeft: "30px", position: "relative"}}>
-                <Container style={{backgroundColor: "#F1F0FF", position: "absolute", bottom:0, right:0, borderRadius: "25px", height: "80%", width: "80%"}}>
-                  <Container style={{position: "absolute", bottom:0, right:0, borderRadius: "25px", height: "50%", width: "100%"}}>
-                    <Typography variant="h4" style={{marginBottom: "20px"}}>Beatriz Brito</Typography>
+              <Container style={{ marginLeft: "30px", position: "relative" }}>
+                <Container
+                  style={{
+                    backgroundColor: "#F1F0FF",
+                    position: "absolute",
+                    bottom: 0,
+                    right: 0,
+                    borderRadius: "25px",
+                    height: "80%",
+                    width: "80%"
+                  }}
+                >
+                  <Container
+                    style={{
+                      position: "absolute",
+                      bottom: 0,
+                      right: 0,
+                      borderRadius: "25px",
+                      height: "50%",
+                      width: "100%"
+                    }}
+                  >
+                    <Typography variant="h4" style={{ marginBottom: "20px" }}>
+                      Beatriz Brito
+                    </Typography>
                     <Typography variant="h5">Science</Typography>
                   </Container>
                 </Container>
-                < img src={require("../images/republika.jpg")} alt="slider-image"
-              style={{backgroundColor: "blue", position: "absolute", top:0, left:30, height: "55%", width: "70%", borderRadius: "50%"}}/>
+                <img
+                  src={require("../images/republika.jpg")}
+                  alt="slider-image"
+                  style={{
+                    backgroundColor: "blue",
+                    position: "absolute",
+                    top: 0,
+                    left: 30,
+                    height: "55%",
+                    width: "70%",
+                    borderRadius: "50%"
+                  }}
+                />
               </Container>
-              <Container style={{marginLeft: "30px", position: "relative"}}>
-                <Container style={{backgroundColor: "#F1F0FF", position: "absolute", bottom:0, right:0, borderRadius: "25px", height: "80%", width: "80%"}}>
-                  <Container style={{position: "absolute", bottom:0, right:0, borderRadius: "25px", height: "50%", width: "100%"}}>
-                    <Typography variant="h4" style={{marginBottom: "20px"}}>Jafaris Long</Typography>
+              <Container style={{ marginLeft: "30px", position: "relative" }}>
+                <Container
+                  style={{
+                    backgroundColor: "#F1F0FF",
+                    position: "absolute",
+                    bottom: 0,
+                    right: 0,
+                    borderRadius: "25px",
+                    height: "80%",
+                    width: "80%"
+                  }}
+                >
+                  <Container
+                    style={{
+                      position: "absolute",
+                      bottom: 0,
+                      right: 0,
+                      borderRadius: "25px",
+                      height: "50%",
+                      width: "100%"
+                    }}
+                  >
+                    <Typography variant="h4" style={{ marginBottom: "20px" }}>
+                      Jafaris Long
+                    </Typography>
                     <Typography variant="h5">Science</Typography>
                   </Container>
                 </Container>
-                < img src={require("../images/republika.jpg")} alt="slider-image"
-              style={{backgroundColor: "blue", position: "absolute", top:0, left:30, height: "55%", width: "70%", borderRadius: "50%"}}/>
+                <img
+                  src={require("../images/republika.jpg")}
+                  alt="slider-image"
+                  style={{
+                    backgroundColor: "blue",
+                    position: "absolute",
+                    top: 0,
+                    left: 30,
+                    height: "55%",
+                    width: "70%",
+                    borderRadius: "50%"
+                  }}
+                />
               </Container>
-              <Container style={{marginLeft: "30px", position: "relative"}}>
-                <Container style={{backgroundColor: "#F1F0FF", position: "absolute", bottom:0, right:0, borderRadius: "25px", height: "80%", width: "80%"}}>
-                  <Container style={{position: "absolute", bottom:0, right:0, borderRadius: "25px", height: "50%", width: "100%"}}>
-                    <Typography variant="h4" style={{marginBottom: "20px"}}>Palo Camber</Typography>
+              <Container style={{ marginLeft: "30px", position: "relative" }}>
+                <Container
+                  style={{
+                    backgroundColor: "#F1F0FF",
+                    position: "absolute",
+                    bottom: 0,
+                    right: 0,
+                    borderRadius: "25px",
+                    height: "80%",
+                    width: "80%"
+                  }}
+                >
+                  <Container
+                    style={{
+                      position: "absolute",
+                      bottom: 0,
+                      right: 0,
+                      borderRadius: "25px",
+                      height: "50%",
+                      width: "100%"
+                    }}
+                  >
+                    <Typography variant="h4" style={{ marginBottom: "20px" }}>
+                      Palo Camber
+                    </Typography>
                     <Typography variant="h5">Science</Typography>
                   </Container>
                 </Container>
-                < img src={require("../images/republika.jpg")} alt="slider-image"
-              style={{backgroundColor: "blue", position: "absolute", top:0, left:30, height: "55%", width: "70%", borderRadius: "50%"}}/>
+                <img
+                  src={require("../images/republika.jpg")}
+                  alt="slider-image"
+                  style={{
+                    backgroundColor: "blue",
+                    position: "absolute",
+                    top: 0,
+                    left: 30,
+                    height: "55%",
+                    width: "70%",
+                    borderRadius: "50%"
+                  }}
+                />
               </Container>
             </Container>
           </Container>
@@ -341,7 +522,7 @@ class Home extends Component {
             variant="h3"
             style={{ marginBottom: 20 }}
           >
-            Karya Murid dan Instruktur Mamastudio
+            Karya Murid dan Instruktur Studio Koding
           </Typography>
           <Slider {...settings}>
             <Grid item xs={11} md={11}>
@@ -490,20 +671,20 @@ class Home extends Component {
             variant="h3"
             style={{ marginBottom: 20 }}
           >
-            Prestasi Alumni Mamastudio
+            Prestasi Alumni Studio Koding
           </Typography>
           <Grid container spacing={3}>
             <Grid item xs={12} md={6}>
               <Typography component="p">
-                Semenjak tahun 2014 pada acara e-transparancy award. Mamastudio
+                Semenjak tahun 2014 pada acara e-transparancy award. Studio Koding
                 ditunjuk sebagai konsultan untuk memberikan masukan atas
                 website-website milik kementerian dan lembaga RI. Beberapa
                 website kementerian telah dibangun dengan mengikuti
                 tahapan-tahapan pembuatan website yang sesuai dengan
                 standarisasi website yang baik, serta peraturan. Contohnya
                 adalah website milik kementerian kelautan, kementerian agrarian
-                dan beberapa kementerian lain telah dibuat oleh Mamastudio.
-                Sampai saat inipun Mamastudio masih rutin memberikan masukan dan
+                dan beberapa kementerian lain telah dibuat oleh Studio Koding.
+                Sampai saat inipun Studio Koding masih rutin memberikan masukan dan
                 pelatihan pada beberapa kementerian mengenai teknologi terbaru
                 dalam bidang website, pemanfaatan social media dan mobile app.
               </Typography>
@@ -512,7 +693,7 @@ class Home extends Component {
               <img
                 style={{ width: "100%" }}
                 src={require("../images/republika.jpg")}
-                alt="Mamastudio-image"
+                alt="Studio Koding-image"
               />
             </Grid>
           </Grid>
@@ -560,7 +741,7 @@ class Home extends Component {
               <img
                 style={{ borderRadius: "25px", maxWidth: "30%", flexGrow: 2 }}
                 src={require("../images/republika.jpg")}
-                alt="Mamastudio-image"
+                alt="Studio Koding-image"
               />
               <Container
                 style={{
@@ -646,7 +827,7 @@ class Home extends Component {
               <img
                 style={{ borderRadius: "25px", maxWidth: "30%", flexGrow: 2 }}
                 src={require("../images/republika.jpg")}
-                alt="Mamastudio-image"
+                alt="Studio Koding-image"
               />
               <Container
                 style={{
@@ -732,7 +913,7 @@ class Home extends Component {
               <img
                 style={{ borderRadius: "25px", maxWidth: "30%", flexGrow: 2 }}
                 src={require("../images/republika.jpg")}
-                alt="Mamastudio-image"
+                alt="Studio Koding-image"
               />
               <Container
                 style={{
