@@ -124,7 +124,7 @@ export default function Album() {
           </Container>
           <Container className={classes.footerContainer}>
             <Typography variant="h6" align="center" gutterBottom>
-              Popular Courses :{" "}
+              Popular Courses :
             </Typography>
             <Typography variant="p" align="center" component="p">
               Web & Mobile Programming
