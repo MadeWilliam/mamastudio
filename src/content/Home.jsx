@@ -13,6 +13,7 @@ class Home extends Component {
 
     this.state = {
       json: [],
+      photos: [],
 
       itemNo: 1,
       loop: false,
@@ -38,20 +39,20 @@ class Home extends Component {
   }
 
   // TODO: CAROUSEL API
-  // componentDidMount() {
-  //   fetch("https://jsonplaceholder.typicode.com/users")
-  //     .then(res => res.json())
-  //     .then(
-  //       result => {
-  //         this.setState({
-  //           json: result
-  //         });
-  //       },
-  //       error => {
-  //         console.log(error);
-  //       }
-  //     );
-  // }
+  componentDidMount() {
+    fetch("https://jsonplaceholder.typicode.com/photos")
+      .then(res => res.json())
+      .then(
+        result => {
+          this.setState({
+            photos: result
+          });
+        },
+        error => {
+          console.log(error);
+        }
+      );
+  }
 
   render() {
     const options = {
@@ -135,21 +136,14 @@ class Home extends Component {
     return (
       <React.Fragment style={{ margin: 0, padding: 0, marginTop: "64px" }}>
         {/* <OwlCarousel options={options}>
-          {this.state.json.map(carousel => (
+          {this.state.photos.map(carousel => (
             <div key={carousel.id}>
               <img src={carousel.url} alt="banner" />
             </div>
           ))}
         </OwlCarousel> */}
         <OwlCarousel options={options}>{items}</OwlCarousel>
-        {/* <Container style={{width: "80%", textAlign: "center", margin: "0 auto"}}>
-          {this.state.json.map(user => (
-            <div>
-              <h1>{user.name}</h1>
-            </div>
-          ))}
-        </Container>
- */}
+
         {/* Homebanner start */}
         <div
           style={{
@@ -211,7 +205,7 @@ class Home extends Component {
             variant="h3"
             style={{ marginTop: 40, marginBottom: 20 }}
           >
-            Studio Koding pernah diliput
+            Mamastudio pernah diliput
           </Typography>
 
           <Slider {...liputanSettings}>
@@ -522,7 +516,7 @@ class Home extends Component {
             variant="h3"
             style={{ marginBottom: 20 }}
           >
-            Karya Murid dan Instruktur Studio Koding
+            Karya Murid dan Instruktur Mamastudio
           </Typography>
           <Slider {...settings}>
             <Grid item xs={11} md={11}>
@@ -663,6 +657,251 @@ class Home extends Component {
         </Container>
         {/* Features end */}
 
+        {/* News start */}
+
+        {this.state.json.map(user => (
+          <Container
+            fixed
+            style={{
+              width: "90%",
+              marginTop: 20,
+              paddingTop: 20,
+              height: "700px",
+              borderRadius: "25px"
+            }}
+          >
+            <Typography
+              component="h3"
+              variant="h4"
+              style={{ marginBottom: 10, fontWeight: 700, textAlign: "center" }}
+            >
+              Blog
+            </Typography>
+            <Typography
+              component="h1"
+              align="center"
+              variant="h3"
+              style={{ textAlign: "center", color: "#EC9120" }}
+            >
+              Recent News
+            </Typography>
+            <Container fixed style={{ marginTop: 20, height: "500px" }}>
+              <Container
+                style={{
+                  display: "flex",
+                  backgroundColor: "#F1F0FF",
+                  borderRadius: "25px",
+                  padding: 0,
+                  marginTop: 20,
+                  height: "150px"
+                }}
+              >
+                <img
+                  style={{ borderRadius: "25px", maxWidth: "30%", flexGrow: 2 }}
+                  src={require("../images/republika.jpg")}
+                  alt="Studio Koding-image"
+                />
+                <Container
+                  style={{
+                    padding: "20px"
+                  }}
+                >
+                  <Button
+                    style={{
+                      backgroundColor: "lightblue",
+                      fontWeight: "900",
+                      borderRadius: "24px",
+                      color: "white",
+                      marginBottom: "10px"
+                    }}
+                    href="#"
+                    variant="contained"
+                  >
+                    WebSite
+                  </Button>
+                  <Typography component="h3" variant="h5">
+                    <b>Quantum Computers</b>
+                  </Typography>
+                </Container>
+                <Container
+                  style={{
+                    padding: "20px"
+                  }}
+                >
+                  <Typography
+                    style={{
+                      marginBottom: "30px",
+                      fontWeight: "light",
+                      color: "grey"
+                    }}
+                  >
+                    DATE
+                  </Typography>
+                  <Typography>04 Nov 2019</Typography>
+                </Container>
+                <Container
+                  style={{
+                    padding: "20px"
+                  }}
+                >
+                  <Typography
+                    style={{
+                      marginBottom: "30px",
+                      fontWeight: "light",
+                      color: "grey"
+                    }}
+                  >
+                    AUTHOR
+                  </Typography>
+                  <Typography>{user.name}</Typography>
+                </Container>
+              </Container>
+              <Container
+                style={{
+                  display: "flex",
+                  backgroundColor: "#F1F0FF",
+                  borderRadius: "25px",
+                  padding: 0,
+                  marginTop: 20,
+                  height: "150px"
+                }}
+              >
+                <img
+                  style={{ borderRadius: "25px", maxWidth: "30%", flexGrow: 2 }}
+                  src={require("../images/republika.jpg")}
+                  alt="Studio Koding-image"
+                />
+                <Container
+                  style={{
+                    padding: "20px"
+                  }}
+                >
+                  <Button
+                    style={{
+                      backgroundColor: "pink",
+                      fontWeight: "900",
+                      borderRadius: "24px",
+                      color: "white",
+                      marginBottom: "10px"
+                    }}
+                    href="#"
+                    variant="contained"
+                  >
+                    DESIGN
+                  </Button>
+                  <Typography component="h3" variant="h5">
+                    <b>Mechanics</b>
+                  </Typography>
+                </Container>
+                <Container
+                  style={{
+                    padding: "20px"
+                  }}
+                >
+                  <Typography
+                    style={{
+                      marginBottom: "30px",
+                      fontWeight: "light",
+                      color: "grey"
+                    }}
+                  >
+                    DATE
+                  </Typography>
+                  <Typography>04 Nov 2019</Typography>
+                </Container>
+                <Container
+                  style={{
+                    padding: "20px"
+                  }}
+                >
+                  <Typography
+                    style={{
+                      marginBottom: "30px",
+                      fontWeight: "light",
+                      color: "grey"
+                    }}
+                  >
+                    DURATION
+                  </Typography>
+                  <Typography>Kita Chihoko</Typography>
+                </Container>
+              </Container>
+              <Container
+                style={{
+                  display: "flex",
+                  backgroundColor: "#F1F0FF",
+                  borderRadius: "25px",
+                  padding: 0,
+                  marginTop: 20,
+                  height: "150px"
+                }}
+              >
+                <img
+                  style={{ borderRadius: "25px", maxWidth: "30%", flexGrow: 2 }}
+                  src={require("../images/republika.jpg")}
+                  alt="Studio Koding-image"
+                />
+                <Container
+                  style={{
+                    padding: "20px"
+                  }}
+                >
+                  <Button
+                    style={{
+                      backgroundColor: "lightblue",
+                      fontWeight: "900",
+                      borderRadius: "24px",
+                      color: "white",
+                      marginBottom: "10px"
+                    }}
+                    href="#"
+                    variant="contained"
+                  >
+                    APPLICATION
+                  </Button>
+                  <Typography component="h3" variant="h5">
+                    <b>Neuroscience</b>
+                  </Typography>
+                </Container>
+                <Container
+                  style={{
+                    padding: "20px"
+                  }}
+                >
+                  <Typography
+                    style={{
+                      marginBottom: "30px",
+                      fontWeight: "light",
+                      color: "grey"
+                    }}
+                  >
+                    DATE
+                  </Typography>
+                  <Typography>04 Nov 2019</Typography>
+                </Container>
+                <Container
+                  style={{
+                    padding: "20px"
+                  }}
+                >
+                  <Typography
+                    style={{
+                      marginBottom: "30px",
+                      fontWeight: "light",
+                      color: "grey"
+                    }}
+                  >
+                    DURATION
+                  </Typography>
+                  <Typography>Kita Chihoko</Typography>
+                </Container>
+              </Container>
+            </Container>
+          </Container>
+        ))}
+
+        {/* News end */}
+
         {/* Prestasi alumni start */}
         <Container fixed style={{ marginTop: 60 }}>
           <Typography
@@ -671,20 +910,20 @@ class Home extends Component {
             variant="h3"
             style={{ marginBottom: 20 }}
           >
-            Prestasi Alumni Studio Koding
+            Prestasi Alumni Mamastudio
           </Typography>
           <Grid container spacing={3}>
             <Grid item xs={12} md={6}>
               <Typography component="p">
-                Semenjak tahun 2014 pada acara e-transparancy award. Studio Koding
+                Semenjak tahun 2014 pada acara e-transparancy award. Mamastudio
                 ditunjuk sebagai konsultan untuk memberikan masukan atas
                 website-website milik kementerian dan lembaga RI. Beberapa
                 website kementerian telah dibangun dengan mengikuti
                 tahapan-tahapan pembuatan website yang sesuai dengan
                 standarisasi website yang baik, serta peraturan. Contohnya
                 adalah website milik kementerian kelautan, kementerian agrarian
-                dan beberapa kementerian lain telah dibuat oleh Studio Koding.
-                Sampai saat inipun Studio Koding masih rutin memberikan masukan dan
+                dan beberapa kementerian lain telah dibuat oleh Mamastudio.
+                Sampai saat inipun Mamastudio masih rutin memberikan masukan dan
                 pelatihan pada beberapa kementerian mengenai teknologi terbaru
                 dalam bidang website, pemanfaatan social media dan mobile app.
               </Typography>
@@ -693,7 +932,7 @@ class Home extends Component {
               <img
                 style={{ width: "100%" }}
                 src={require("../images/republika.jpg")}
-                alt="Studio Koding-image"
+                alt="Mamastudio-image"
               />
             </Grid>
           </Grid>
@@ -741,7 +980,7 @@ class Home extends Component {
               <img
                 style={{ borderRadius: "25px", maxWidth: "30%", flexGrow: 2 }}
                 src={require("../images/republika.jpg")}
-                alt="Studio Koding-image"
+                alt="Mamastudio-image"
               />
               <Container
                 style={{
@@ -827,7 +1066,7 @@ class Home extends Component {
               <img
                 style={{ borderRadius: "25px", maxWidth: "30%", flexGrow: 2 }}
                 src={require("../images/republika.jpg")}
-                alt="Studio Koding-image"
+                alt="Mamastudio-image"
               />
               <Container
                 style={{
@@ -913,7 +1152,7 @@ class Home extends Component {
               <img
                 style={{ borderRadius: "25px", maxWidth: "30%", flexGrow: 2 }}
                 src={require("../images/republika.jpg")}
-                alt="Studio Koding-image"
+                alt="Mamastudio-image"
               />
               <Container
                 style={{
