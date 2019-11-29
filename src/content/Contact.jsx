@@ -14,10 +14,10 @@ class Contact extends Component {
               <div className="contact-card-1-content">
                 <h3>Customer Service - <b style={{fontSize: "16px", color: "#ECC968"}}>Mamabantu</b></h3>
                 <p>
-                  Anda memiliki pertanyaan seputar layanan mamastudio? tanyakan
-                  langsung ke <b style={{fontSize: "16px", color: "#ECC968"}}>Mamabantu</b> - mamastudio Virtual Assistant. <b style={{fontSize: "16px", color: "#ECC968"}}>Mamabantu</b> siap
+                  Anda memiliki pertanyaan seputar layanan studiokoding tanyakan
+                  langsung ke <b style={{fontSize: "16px", color: "#ECC968"}}>Mamabantu</b> - studiokoding Virtual Assistant. <b style={{fontSize: "16px", color: "#ECC968"}}>Mamabantu</b> siap
                   membantu Anda menemukan solusi dari berbagai jenis bantuan
-                  seputar mamastudio
+                  seputar studiokoding
                 </p>
                 <button>
                   <Link to="/">Tanya <b style={{fontSize: "16px", color: "#ECC968"}}>Mamabantu</b></Link>
@@ -41,7 +41,7 @@ class Contact extends Component {
               <div className="contact-card-3-content">
                 <h3>Mamapedia</h3>
                 <p>
-                  Temukan semua hal tentang layanan mamastudio dan pertanyaan
+                  Temukan semua hal tentang layanan studiokoding dan pertanyaan
                   populer di sini.
                 </p>
                 <button>

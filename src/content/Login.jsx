@@ -8,7 +8,7 @@ class Login extends Component {
         return (
             <div className="login-wrapper">
                 <div className="login-layout">
-                    <h2>Welcome to <b style={{fontSize: "64px", color: "#ECC968"}}>mamastudio</b></h2>
+                    <h2>Welcome to <b style={{fontSize: "64px", color: "#ECC968"}}>studiokoding</b></h2>
                     <div className="login-card-wrapper">
                         <div className="login-card">
                             <div className="login-card-content">

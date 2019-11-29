@@ -32,7 +32,7 @@ function Copyright() {
     >
       &copy; Copyright_
       <Link color="inherit" href="https://localhost:3000/">
-        mamastudio_
+        studiokoding_
       </Link>
       {new Date().getFullYear()}
     </Typography>
@@ -60,7 +60,7 @@ export default function Album() {
               className={classes.toolbarTitle}
             >
               <NavLink to="/" className={classes.toolbarTitle}>
-                <b>mamastudio</b>
+                <b>studiokoding</b>
               </NavLink>
             </Typography>
             <nav>
@@ -110,12 +110,12 @@ export default function Album() {
         <footer className={classes.footer}>
           <Container className={classes.footerContainer}>
             <Typography
-              variant="h2"
+              variant="h3"
               component="h1"
               noWrap
               className={classes.footerTitle}
             >
-              mamastudio
+              studiokoding
             </Typography>
             <Typography variant="h6" align="center" gutterBottom>
               Berdiri sejak tahun 2003 telah memiliki lebih dari 15.000 peserta
