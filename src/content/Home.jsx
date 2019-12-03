@@ -135,7 +135,7 @@ class Home extends Component {
 
     return (
       <React.Fragment style={{ margin: 0, padding: 0, marginTop: "64px" }}>
-        {/* <OwlCarousel options={options}>
+        <OwlCarousel options={options}>
           {this.state.photos.map(carousel => (
             <div key={carousel.id}>
               <img src={carousel.url} alt="banner" />
@@ -144,7 +144,7 @@ class Home extends Component {
         </OwlCarousel> */}
         <OwlCarousel options={options}>{items}</OwlCarousel>
 
-        {/* Homebanner start */}
+        {/* Homebanner start
         <div
           style={{
             backgroundColor: "#0C007F",
