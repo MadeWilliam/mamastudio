@@ -12,20 +12,46 @@ class Home extends Component {
     super(props);
 
     this.state = {
-      items: [
-        <div key={1}>
-          <img src={require("../images/slide1.jpg")} alt="banner" />
-        </div>,
-        <div key={2}>
-          <img src={require("../images/slide2.jpg")} alt="banner" />
-        </div>
-      ],
+      json: [],
+      photos: [],
+
       itemNo: 1,
       loop: false,
       nav: false,
       rewind: true,
       autoplay: true
     };
+  }
+
+  componentDidMount() {
+    fetch("https://jsonplaceholder.typicode.com/users")
+      .then(res => res.json())
+      .then(
+        result => {
+          this.setState({
+            json: result
+          });
+        },
+        error => {
+          console.log(error);
+        }
+      );
+  }
+
+  // TODO: CAROUSEL API
+  componentDidMount() {
+    fetch("https://jsonplaceholder.typicode.com/photos")
+      .then(res => res.json())
+      .then(
+        result => {
+          this.setState({
+            photos: result
+          });
+        },
+        error => {
+          console.log(error);
+        }
+      );
   }
 
   render() {
@@ -61,9 +87,62 @@ class Home extends Component {
       slidesToScroll: 1
     };
 
+    // this.state.json.map(user => {
+    //   this.setState{{
+    //     userid :
+    //   }}
+    // })
+
+    // const displayJson = (
+    //   {this.state.json.map(user => {
+    //     <div>
+    //       <h1>Hellow</h1>
+    //       <h1>Hellow</h1>
+    //       <h1>Hellow</h1>
+    //     </div>
+    //   })}
+    // );
+
+    // const displayJson = (
+    //   <div>
+    //     <h1>Hellow</h1>
+    //     <h1>Hellow</h1>
+    //     <h1>Hellow</h1>
+    //   </div>
+    // );
+
+    // const items = () => {
+    //   {
+    //     this.state.json.map(carousel => [
+    //       <div key={1}>
+    //         <img src={require(`../images/${carousel}.jpg`)} alt="banner" />
+    //       </div>,
+    //       <div key={2}>
+    //         <img src={require(`../images/${carousel}".jpg`)} alt="banner" />
+    //       </div>
+    //     ]);
+    //   }
+    // };
+
+    const items = [
+      <div key={1}>
+        <img src={require(`../images/slide1.jpg`)} alt="banner" />
+      </div>,
+      <div key={2}>
+        <img src={require(`../images/slide2.jpg`)} alt="banner" />
+      </div>
+    ];
+
     return (
       <React.Fragment style={{ margin: 0, padding: 0, marginTop: "64px" }}>
-        <OwlCarousel options={options}>{this.state.items}</OwlCarousel>
+        {/* <OwlCarousel options={options}>
+          {this.state.photos.map(carousel => (
+            <div key={carousel.id}>
+              <img src={carousel.url} alt="banner" />
+            </div>
+          ))}
+        </OwlCarousel> */}
+        <OwlCarousel options={options}>{items}</OwlCarousel>
 
         {/* Homebanner start */}
         <div
@@ -298,35 +377,131 @@ class Home extends Component {
                 height: "450px"
               }}
             >
-              <Container style={{marginLeft: "30px", position: "relative"}}>
-                <Container style={{backgroundColor: "#F1F0FF", position: "absolute", bottom:0, right:0, borderRadius: "25px", height: "80%", width: "80%"}}>
-                  <Container style={{position: "absolute", bottom:0, right:0, borderRadius: "25px", height: "50%", width: "100%"}}>
-                    <Typography variant="h4" style={{marginBottom: "20px"}}>Beatriz Brito</Typography>
+              <Container style={{ marginLeft: "30px", position: "relative" }}>
+                <Container
+                  style={{
+                    backgroundColor: "#F1F0FF",
+                    position: "absolute",
+                    bottom: 0,
+                    right: 0,
+                    borderRadius: "25px",
+                    height: "80%",
+                    width: "80%"
+                  }}
+                >
+                  <Container
+                    style={{
+                      position: "absolute",
+                      bottom: 0,
+                      right: 0,
+                      borderRadius: "25px",
+                      height: "50%",
+                      width: "100%"
+                    }}
+                  >
+                    <Typography variant="h4" style={{ marginBottom: "20px" }}>
+                      Beatriz Brito
+                    </Typography>
                     <Typography variant="h5">Science</Typography>
                   </Container>
                 </Container>
-                < img src={require("../images/republika.jpg")} alt="slider-image"
-              style={{backgroundColor: "blue", position: "absolute", top:0, left:30, height: "55%", width: "70%", borderRadius: "50%"}}/>
+                <img
+                  src={require("../images/republika.jpg")}
+                  alt="slider-image"
+                  style={{
+                    backgroundColor: "blue",
+                    position: "absolute",
+                    top: 0,
+                    left: 30,
+                    height: "55%",
+                    width: "70%",
+                    borderRadius: "50%"
+                  }}
+                />
               </Container>
-              <Container style={{marginLeft: "30px", position: "relative"}}>
-                <Container style={{backgroundColor: "#F1F0FF", position: "absolute", bottom:0, right:0, borderRadius: "25px", height: "80%", width: "80%"}}>
-                  <Container style={{position: "absolute", bottom:0, right:0, borderRadius: "25px", height: "50%", width: "100%"}}>
-                    <Typography variant="h4" style={{marginBottom: "20px"}}>Jafaris Long</Typography>
+              <Container style={{ marginLeft: "30px", position: "relative" }}>
+                <Container
+                  style={{
+                    backgroundColor: "#F1F0FF",
+                    position: "absolute",
+                    bottom: 0,
+                    right: 0,
+                    borderRadius: "25px",
+                    height: "80%",
+                    width: "80%"
+                  }}
+                >
+                  <Container
+                    style={{
+                      position: "absolute",
+                      bottom: 0,
+                      right: 0,
+                      borderRadius: "25px",
+                      height: "50%",
+                      width: "100%"
+                    }}
+                  >
+                    <Typography variant="h4" style={{ marginBottom: "20px" }}>
+                      Jafaris Long
+                    </Typography>
                     <Typography variant="h5">Science</Typography>
                   </Container>
                 </Container>
-                < img src={require("../images/republika.jpg")} alt="slider-image"
-              style={{backgroundColor: "blue", position: "absolute", top:0, left:30, height: "55%", width: "70%", borderRadius: "50%"}}/>
+                <img
+                  src={require("../images/republika.jpg")}
+                  alt="slider-image"
+                  style={{
+                    backgroundColor: "blue",
+                    position: "absolute",
+                    top: 0,
+                    left: 30,
+                    height: "55%",
+                    width: "70%",
+                    borderRadius: "50%"
+                  }}
+                />
               </Container>
-              <Container style={{marginLeft: "30px", position: "relative"}}>
-                <Container style={{backgroundColor: "#F1F0FF", position: "absolute", bottom:0, right:0, borderRadius: "25px", height: "80%", width: "80%"}}>
-                  <Container style={{position: "absolute", bottom:0, right:0, borderRadius: "25px", height: "50%", width: "100%"}}>
-                    <Typography variant="h4" style={{marginBottom: "20px"}}>Palo Camber</Typography>
+              <Container style={{ marginLeft: "30px", position: "relative" }}>
+                <Container
+                  style={{
+                    backgroundColor: "#F1F0FF",
+                    position: "absolute",
+                    bottom: 0,
+                    right: 0,
+                    borderRadius: "25px",
+                    height: "80%",
+                    width: "80%"
+                  }}
+                >
+                  <Container
+                    style={{
+                      position: "absolute",
+                      bottom: 0,
+                      right: 0,
+                      borderRadius: "25px",
+                      height: "50%",
+                      width: "100%"
+                    }}
+                  >
+                    <Typography variant="h4" style={{ marginBottom: "20px" }}>
+                      Palo Camber
+                    </Typography>
                     <Typography variant="h5">Science</Typography>
                   </Container>
                 </Container>
-                < img src={require("../images/republika.jpg")} alt="slider-image"
-              style={{backgroundColor: "blue", position: "absolute", top:0, left:30, height: "55%", width: "70%", borderRadius: "50%"}}/>
+                <img
+                  src={require("../images/republika.jpg")}
+                  alt="slider-image"
+                  style={{
+                    backgroundColor: "blue",
+                    position: "absolute",
+                    top: 0,
+                    left: 30,
+                    height: "55%",
+                    width: "70%",
+                    borderRadius: "50%"
+                  }}
+                />
               </Container>
             </Container>
           </Container>
@@ -481,6 +656,251 @@ class Home extends Component {
           </Container>
         </Container>
         {/* Features end */}
+
+        {/* News start */}
+
+        {this.state.json.map(user => (
+          <Container
+            fixed
+            style={{
+              width: "90%",
+              marginTop: 20,
+              paddingTop: 20,
+              height: "700px",
+              borderRadius: "25px"
+            }}
+          >
+            <Typography
+              component="h3"
+              variant="h4"
+              style={{ marginBottom: 10, fontWeight: 700, textAlign: "center" }}
+            >
+              Blog
+            </Typography>
+            <Typography
+              component="h1"
+              align="center"
+              variant="h3"
+              style={{ textAlign: "center", color: "#EC9120" }}
+            >
+              Recent News
+            </Typography>
+            <Container fixed style={{ marginTop: 20, height: "500px" }}>
+              <Container
+                style={{
+                  display: "flex",
+                  backgroundColor: "#F1F0FF",
+                  borderRadius: "25px",
+                  padding: 0,
+                  marginTop: 20,
+                  height: "150px"
+                }}
+              >
+                <img
+                  style={{ borderRadius: "25px", maxWidth: "30%", flexGrow: 2 }}
+                  src={require("../images/republika.jpg")}
+                  alt="Studio Koding-image"
+                />
+                <Container
+                  style={{
+                    padding: "20px"
+                  }}
+                >
+                  <Button
+                    style={{
+                      backgroundColor: "lightblue",
+                      fontWeight: "900",
+                      borderRadius: "24px",
+                      color: "white",
+                      marginBottom: "10px"
+                    }}
+                    href="#"
+                    variant="contained"
+                  >
+                    WebSite
+                  </Button>
+                  <Typography component="h3" variant="h5">
+                    <b>Quantum Computers</b>
+                  </Typography>
+                </Container>
+                <Container
+                  style={{
+                    padding: "20px"
+                  }}
+                >
+                  <Typography
+                    style={{
+                      marginBottom: "30px",
+                      fontWeight: "light",
+                      color: "grey"
+                    }}
+                  >
+                    DATE
+                  </Typography>
+                  <Typography>04 Nov 2019</Typography>
+                </Container>
+                <Container
+                  style={{
+                    padding: "20px"
+                  }}
+                >
+                  <Typography
+                    style={{
+                      marginBottom: "30px",
+                      fontWeight: "light",
+                      color: "grey"
+                    }}
+                  >
+                    AUTHOR
+                  </Typography>
+                  <Typography>{user.name}</Typography>
+                </Container>
+              </Container>
+              <Container
+                style={{
+                  display: "flex",
+                  backgroundColor: "#F1F0FF",
+                  borderRadius: "25px",
+                  padding: 0,
+                  marginTop: 20,
+                  height: "150px"
+                }}
+              >
+                <img
+                  style={{ borderRadius: "25px", maxWidth: "30%", flexGrow: 2 }}
+                  src={require("../images/republika.jpg")}
+                  alt="Studio Koding-image"
+                />
+                <Container
+                  style={{
+                    padding: "20px"
+                  }}
+                >
+                  <Button
+                    style={{
+                      backgroundColor: "pink",
+                      fontWeight: "900",
+                      borderRadius: "24px",
+                      color: "white",
+                      marginBottom: "10px"
+                    }}
+                    href="#"
+                    variant="contained"
+                  >
+                    DESIGN
+                  </Button>
+                  <Typography component="h3" variant="h5">
+                    <b>Mechanics</b>
+                  </Typography>
+                </Container>
+                <Container
+                  style={{
+                    padding: "20px"
+                  }}
+                >
+                  <Typography
+                    style={{
+                      marginBottom: "30px",
+                      fontWeight: "light",
+                      color: "grey"
+                    }}
+                  >
+                    DATE
+                  </Typography>
+                  <Typography>04 Nov 2019</Typography>
+                </Container>
+                <Container
+                  style={{
+                    padding: "20px"
+                  }}
+                >
+                  <Typography
+                    style={{
+                      marginBottom: "30px",
+                      fontWeight: "light",
+                      color: "grey"
+                    }}
+                  >
+                    DURATION
+                  </Typography>
+                  <Typography>Kita Chihoko</Typography>
+                </Container>
+              </Container>
+              <Container
+                style={{
+                  display: "flex",
+                  backgroundColor: "#F1F0FF",
+                  borderRadius: "25px",
+                  padding: 0,
+                  marginTop: 20,
+                  height: "150px"
+                }}
+              >
+                <img
+                  style={{ borderRadius: "25px", maxWidth: "30%", flexGrow: 2 }}
+                  src={require("../images/republika.jpg")}
+                  alt="Studio Koding-image"
+                />
+                <Container
+                  style={{
+                    padding: "20px"
+                  }}
+                >
+                  <Button
+                    style={{
+                      backgroundColor: "lightblue",
+                      fontWeight: "900",
+                      borderRadius: "24px",
+                      color: "white",
+                      marginBottom: "10px"
+                    }}
+                    href="#"
+                    variant="contained"
+                  >
+                    APPLICATION
+                  </Button>
+                  <Typography component="h3" variant="h5">
+                    <b>Neuroscience</b>
+                  </Typography>
+                </Container>
+                <Container
+                  style={{
+                    padding: "20px"
+                  }}
+                >
+                  <Typography
+                    style={{
+                      marginBottom: "30px",
+                      fontWeight: "light",
+                      color: "grey"
+                    }}
+                  >
+                    DATE
+                  </Typography>
+                  <Typography>04 Nov 2019</Typography>
+                </Container>
+                <Container
+                  style={{
+                    padding: "20px"
+                  }}
+                >
+                  <Typography
+                    style={{
+                      marginBottom: "30px",
+                      fontWeight: "light",
+                      color: "grey"
+                    }}
+                  >
+                    DURATION
+                  </Typography>
+                  <Typography>Kita Chihoko</Typography>
+                </Container>
+              </Container>
+            </Container>
+          </Container>
+        ))}
+
+        {/* News end */}
 
         {/* Prestasi alumni start */}
         <Container fixed style={{ marginTop: 60 }}>

@@ -6,12 +6,13 @@ const useStyles = makeStyles(theme => ({
   },
   toolbar: {
     color: "#ECc968",
-    flexWrap: "wrap"
+    flexWrap: "wrap",
   },
   toolbarTitle: {
     color: "#ECc968",
     flexGrow: 1,
-    margin: 10
+    margin: 10,
+    height: "70px"
   },
   link: {
     margin: theme.spacing(1, 2),
