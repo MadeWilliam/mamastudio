@@ -48,7 +48,7 @@ class Register extends Component {
                     </div>
                     <div className="login-house">
                         <div className="login-house-content">
-                            <img src={require("../images/slide1.jpg")} alt="" />
+                            <img src={require("../images/slide2.jpg")} alt="" />
                             <h3>Web Consultant & Training</h3>
                             <p>Kursus Web, Digital Marketing & Toko Online Terbaik di Jakarta, Serpong dan Bekasi</p>
                         </div>

@@ -2,14 +2,15 @@ import { makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles(theme => ({
   appBar: {
-    borderBottom: `1px solid ${theme.palette.divider}`
+    borderBottom: `1px solid ${theme.palette.divider}`,
+    background: '#B80B99'
   },
   toolbar: {
-    color: "#ECc968",
+    color: "#B80B99",
     flexWrap: "wrap",
   },
   toolbarTitle: {
-    color: "#ECc968",
+    color: "#B80B99",
     flexGrow: 1,
     margin: 10,
     height: "70px"
@@ -42,7 +43,7 @@ const useStyles = makeStyles(theme => ({
   },
   footer: {
     marginTop: "40px",
-    backgroundColor: "#3F51B5",
+    backgroundColor: "#B80B99",
     padding: theme.spacing(6),
     height: "300px",
     display: "flex",
