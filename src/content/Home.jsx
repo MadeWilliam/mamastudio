@@ -322,6 +322,7 @@ class Home extends Component {
             <Typography
               component="h2"
               variant="h3"
+              align="center"
               style={{ color: "#EC9120", marginBottom: 20 }}
             >
               What Students Say About Us

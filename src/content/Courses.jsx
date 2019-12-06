@@ -207,28 +207,28 @@ export class Courses extends Component {
               }}
             >
               <Course
-                img={require("../images/image1.jpg")}
-                title="Quantum Computers"
+                img={require("../images/fe.jpg")}
+                title="Front End"
                 author="Ivan Cornejo"
                 lessons="10 Lessons"
-                button="website"
+                // button="website"
                 buttonColor="#50C4EE"
                 price="Rp 7.500.000,-"
                 backgroundColor="#F1F0FF"
               />
               <Course
-                img={require("../images/image2.jpg")}
-                title="Mechanics"
+                img={require("../images/be.jpg")}
+                title="Back End"
                 author="Chikanso Chima"
                 lessons="10 Lessons"
-                button="design"
+                // button="design"
                 buttonColor="#EE71C7"
                 price="Rp 7.500.000,-"
                 backgroundColor="#F1F0FF"
               />
               <Course
-                img={require("../images/image3.jpg")}
-                title="Neuroscience"
+                img={require("../images/ui-ux.jpg")}
+                title="DesainUI/UX"
                 author="Leonardo Oliveira"
                 lessons="10 Lessons"
                 button="php"
@@ -236,8 +236,8 @@ export class Courses extends Component {
                 price="Rp 7.500.000,-"
                 backgroundColor="#F1F0FF"
               />
-              <Course
-                img={require("../images/image1.jpg")}
+              {/* <Course
+                img={require("../images/ui-ux.jpg")}
                 title="Human Evolution"
                 author="Joslin Rodgers"
                 lessons="10 Lessons"
@@ -275,7 +275,7 @@ export class Courses extends Component {
                 buttonColor="red"
                 price="Rp 7.500.000,-"
                 backgroundColor="#F1F0FF"
-              />
+              /> */}
             </Container>
           </Container>
         </Container>
