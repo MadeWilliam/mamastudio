@@ -3,7 +3,7 @@ import { makeStyles } from "@material-ui/core";
 const useStyles = makeStyles(theme => ({
   appBar: {
     borderBottom: `1px solid ${theme.palette.divider}`,
-    background: '#B80B99'
+    background: '#200A85'
   },
   toolbar: {
     color: "#B80B99",
@@ -43,7 +43,7 @@ const useStyles = makeStyles(theme => ({
   },
   footer: {
     marginTop: "40px",
-    backgroundColor: "#B80B99",
+    backgroundColor: "#200A85",
     padding: theme.spacing(6),
     height: "300px",
     display: "flex",

@@ -91,7 +91,32 @@ export const Course = props => {
 };
 
 export class Courses extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      json: [],
+      photos: [],
+    };
+  }
+
+  componentDidMount() {
+    fetch("http://codingstudio.herokuapp.com/paket")
+      .then(res => res.json())
+      .then(
+        (result) => {
+          this.setState({
+            photos: result.response
+          });
+        },
+        error => {
+          console.log(error);
+        }
+      );
+  }
+
   render() {
+    const {photos} = this.state;
     return (
       <Container
         style={{
@@ -206,16 +231,22 @@ export class Courses extends Component {
                 marginTop: 20
               }}
             >
+
+
+              {this.state.photos.map((carousel, i) => (
+
               <Course
-                img={require("../images/fe.jpg")}
+                img={carousel.img_paket}
                 title="Front End"
-                author="Ivan Cornejo"
+                author={carousel.desc_paket}
                 lessons="10 Lessons"
                 // button="website"
                 buttonColor="#50C4EE"
-                price="Rp 7.500.000,-"
+                price={carousel.hrg_paket}
                 backgroundColor="#F1F0FF"
               />
+
+              ))}
               <Course
                 img={require("../images/be.jpg")}
                 title="Back End"
@@ -231,7 +262,7 @@ export class Courses extends Component {
                 title="DesainUI/UX"
                 author="Leonardo Oliveira"
                 lessons="10 Lessons"
-                button="php"
+                // button="php"
                 buttonColor="#9177F5"
                 price="Rp 7.500.000,-"
                 backgroundColor="#F1F0FF"

@@ -60,9 +60,9 @@ export default function Album() {
               noWrap
               className={classes.toolbarTitle}
             >
-              <NavLink to="/" className={classes.toolbarTitle} style={{ background: "B80B99" }} >
+              <NavLink to="/" className={classes.toolbarTitle}>
                 {/* <b>studiokoding</b> */}
-                <img src={require(`../images/logo-belajarkooding.jpg`)} width="20%" alt="banner" />
+                <img src={require(`../images/logo-codingstudio.png`)} width="20%" alt="banner" />
               </NavLink>
             </Typography>
             <nav>
@@ -119,7 +119,7 @@ export default function Album() {
               className={classes.footerTitle}
             >
               {/* studiokoding */}
-              <img src={require(`../images/logo-belajarkooding.jpg`)} width="100%" alt="banner" />
+              <img src={require(`../images/logo-codingstudio.png`)} width="100%" alt="banner" />
               
             </Typography>
             <Typography variant="h6" align="center" gutterBottom>
