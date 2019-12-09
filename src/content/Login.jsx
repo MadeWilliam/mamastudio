@@ -15,14 +15,12 @@ class Login extends Component {
                                 <h3>Login</h3>
                                 <div className="login-email-form">
                                     <form action="">
-                                        <label for="username">Username</label>
+                                        <label for="username">Username / Email</label>
                                         <input id="username" type="text" placeholder="Username Anda" />
-                                        <label for="email">Email</label>
-                                        <input id="email" type="email" placeholder="Email Anda" />
+                                        
                                         <label for="password">Password</label>
                                         <input id="password" type="password" placeholder="Password Anda" />
-                                        <label for="password">Confirm Password</label>
-                                        <input id="password" type="password" placeholder="Confirm Password Anda" />
+                                        
                                     </form>
                                 </div>
                                 <div className="socmed-login">

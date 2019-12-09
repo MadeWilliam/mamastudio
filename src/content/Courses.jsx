@@ -91,7 +91,32 @@ export const Course = props => {
 };
 
 export class Courses extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      json: [],
+      photos: [],
+    };
+  }
+
+  componentDidMount() {
+    fetch("http://codingstudio.herokuapp.com/paket")
+      .then(res => res.json())
+      .then(
+        (result) => {
+          this.setState({
+            photos: result.response
+          });
+        },
+        error => {
+          console.log(error);
+        }
+      );
+  }
+
   render() {
+    const {photos} = this.state;
     return (
       <Container
         style={{
@@ -206,38 +231,44 @@ export class Courses extends Component {
                 marginTop: 20
               }}
             >
+
+
+              {this.state.photos.map((carousel, i) => (
+
               <Course
-                img={require("../images/image1.jpg")}
-                title="Quantum Computers"
-                author="Ivan Cornejo"
+                img={carousel.img_paket}
+                title="Front End"
+                author={carousel.desc_paket}
                 lessons="10 Lessons"
-                button="website"
+                // button="website"
                 buttonColor="#50C4EE"
-                price="Rp 7.500.000,-"
+                price={carousel.hrg_paket}
                 backgroundColor="#F1F0FF"
               />
+
+              ))}
               <Course
-                img={require("../images/image2.jpg")}
-                title="Mechanics"
+                img={require("../images/be.jpg")}
+                title="Back End"
                 author="Chikanso Chima"
                 lessons="10 Lessons"
-                button="design"
+                // button="design"
                 buttonColor="#EE71C7"
                 price="Rp 7.500.000,-"
                 backgroundColor="#F1F0FF"
               />
               <Course
-                img={require("../images/image3.jpg")}
-                title="Neuroscience"
+                img={require("../images/ui-ux.jpg")}
+                title="DesainUI/UX"
                 author="Leonardo Oliveira"
                 lessons="10 Lessons"
-                button="php"
+                // button="php"
                 buttonColor="#9177F5"
                 price="Rp 7.500.000,-"
                 backgroundColor="#F1F0FF"
               />
-              <Course
-                img={require("../images/image1.jpg")}
+              {/* <Course
+                img={require("../images/ui-ux.jpg")}
                 title="Human Evolution"
                 author="Joslin Rodgers"
                 lessons="10 Lessons"
@@ -275,7 +306,7 @@ export class Courses extends Component {
                 buttonColor="red"
                 price="Rp 7.500.000,-"
                 backgroundColor="#F1F0FF"
-              />
+              /> */}
             </Container>
           </Container>
         </Container>

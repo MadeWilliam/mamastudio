@@ -48,11 +48,12 @@ export default function Album() {
         <CssBaseline />
         <AppBar
           position="fixed"
-          color="primary"
+          // color="primary"
           elevation={0}
           className={classes.appBar}
+          
         >
-          <Toolbar className={classes.toolbar}>
+          <Toolbar className={classes.toolbar} >
             <Typography
               variant="h2"
               component="h1"
@@ -60,7 +61,8 @@ export default function Album() {
               className={classes.toolbarTitle}
             >
               <NavLink to="/" className={classes.toolbarTitle}>
-                <b>studiokoding</b>
+                {/* <b>studiokoding</b> */}
+                <img src={require(`../images/logo-codingstudio.png`)} width="20%" alt="banner" />
               </NavLink>
             </Typography>
             <nav>
@@ -101,6 +103,7 @@ export default function Album() {
           <Route path="/news" component={News} />
           <Route path="/contact" component={Contact} />
           <Route path="/register" component={Register} />
+          
           <Route path="/login" component={Login} />
           <Route path="/courses-detail" component={CoursesDetail} />
           <Route path="/news-detail" component={NewsDetail} />
@@ -115,7 +118,9 @@ export default function Album() {
               noWrap
               className={classes.footerTitle}
             >
-              studiokoding
+              {/* studiokoding */}
+              <img src={require(`../images/logo-codingstudio.png`)} width="100%" alt="banner" />
+              
             </Typography>
             <Typography variant="h6" align="center" gutterBottom>
               Berdiri sejak tahun 2003 telah memiliki lebih dari 15.000 peserta

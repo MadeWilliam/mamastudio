@@ -36,23 +36,21 @@ class Home extends Component {
           console.log(error);
         }
       );
+
+    fetch("http://codingstudio.herokuapp.com/slider")
+      .then(res => res.json())
+      .then(
+        (result) => {
+          this.setState({
+            photos: result.response
+          }, () => console.log(this.state.photos));
+        }
+      ).catch(error => {
+        console.log(error);
+      })
   }
 
   // TODO: CAROUSEL API
-  componentDidMount() {
-    fetch("https://jsonplaceholder.typicode.com/photos")
-      .then(res => res.json())
-      .then(
-        result => {
-          this.setState({
-            photos: result
-          });
-        },
-        error => {
-          console.log(error);
-        }
-      );
-  }
 
   render() {
     const options = {
@@ -134,17 +132,18 @@ class Home extends Component {
     ];
 
     return (
-      <React.Fragment style={{ margin: 0, padding: 0, marginTop: "64px" }}>
-        {/* <OwlCarousel options={options}>
-          {this.state.photos.map(carousel => (
-            <div key={carousel.id}>
-              <img src={carousel.url} alt="banner" />
+      <React.Fragment style={{ margin: 0, padding: 0, marginTop: 200 }}>
+        <OwlCarousel options={options}>
+          {this.state.photos.map((carousel, i) => (
+            
+            <div key={carousel._id}>
+              <img src={carousel.img_slider} alt="banner" />
             </div>
           ))}
-        </OwlCarousel> */}
-        <OwlCarousel options={options}>{items}</OwlCarousel>
+        </OwlCarousel>
+        {/* <OwlCarousel options={options}>{items}</OwlCarousel> */}
 
-        {/* Homebanner start */}
+        {/* Homebanner start
         <div
           style={{
             backgroundColor: "#0C007F",
@@ -322,6 +321,7 @@ class Home extends Component {
             <Typography
               component="h2"
               variant="h3"
+              align="center"
               style={{ color: "#EC9120", marginBottom: 20 }}
             >
               What Students Say About Us
